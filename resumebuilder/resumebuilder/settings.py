@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u$-nlq7j#28dn4!@awpsaumr!an$q)%d5ozw$9f(t0j=axf&79
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bced5f2fcc6744eba39131fea340bb07.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['e9e1fe09ead743cf81c6af39db062d35.vfs.cloud9.us-east-1.amazonaws.com']
 
 
 # Application definition
@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'resume',
+    'graphene_django',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'resumebuilder.urls'
@@ -128,3 +131,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 GRAPHENE = {
     "SCHEMA": "resume.schema.schema",
 }
+
+CORS_ORIGIN_ALLOW_ALL = False
+# CORS_ORIGIN_WHITELIST = ("http://localhost:8080","http://e9e1fe09ead743cf81c6af39db062d35.vfs.cloud9.us-east-1.amazonaws.com")

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from resume.models import Job, Duty, SubDuty
+from resume.models import Job, Duty, SubDuty, Technology, TechBullet
 
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
@@ -58,5 +58,35 @@ class SubDutyAdmin(admin.ModelAdmin):
         "slug": (
             "duty",
             "subduty"
+        )
+    }
+
+@admin.register(Technology)
+class TechnologyAdmin(admin.ModelAdmin):
+    model = Technology
+    list_display = (
+        "slug",
+        "tech"
+    )
+    
+    prepopulated_fields = {
+        "slug": (
+            "tech",
+        )
+    }
+
+@admin.register(TechBullet)
+class TechBulletAdmin(admin.ModelAdmin):
+    model = TechBullet
+    list_display = (
+        "slug",
+        "tech",
+        "bullet"
+    )
+    
+    prepopulated_fields = {
+        "slug": (
+            "tech",
+            "bullet"
         )
     }

@@ -14,11 +14,45 @@ class SubDutyType(DjangoObjectType):
     class Meta:
         model = models.SubDuty
 
-# class Query(graphene.ObjectType):
-#     all_jobs = graphene.List(JobType)
+class TechnologyType(DjangoObjectType):
+    class Meta:
+        model = models.Technology
+
+class TechBulletType(DjangoObjectType):
+    class Meta:
+        model = models.TechBullet
+
+class Query(graphene.ObjectType):
+    all_jobs = graphene.List(JobType, job=graphene.String())
+    all_tech = graphene.List(TechnologyType, tech=graphene.String())
+    all_duties = graphene.List(DutyType, duty=graphene.String())
+    all_subduties = graphene.List(SubDutyType, subduty=graphene.String())
+    all_tech_bullet = graphene.List(TechBulletType, bullet=graphene.String())
     
-#     def resolve_job_by_slug(root, info, slug):
-#         return (
-#             models.Job.objects.prefetch_related("duties")
-#             .select_related("subduty")
-#         )
+    def resolve_all_jobs(root, info):
+        return (
+            models.Job.objects.all()
+        )
+    
+    def resolve_all_duties(root, info):
+        return (
+            models.Duty.objects.prefetch_related("job")
+        )
+    
+    def resolve_all_tech(root, info):
+        return (
+            models.Technology.objects.all()
+        )
+    
+    def resolve_all_tech_bullet(root, info):
+        return (
+            models.TechBullet.objects.prefetch_related("tech")
+        )
+    
+    def resolve_all_subduties(root, info):
+        return (
+            models.SubDuty.objects.prefetch_related("duty")
+        )
+    
+
+schema = graphene.Schema(query=Query)

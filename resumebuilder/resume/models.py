@@ -27,3 +27,19 @@ class SubDuty(models.Model):
     
     def __str__(self):
         return self.subduty
+
+class Technology(models.Model):
+    tech = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True)
+    
+    def __str__(self):
+        return self.tech
+
+class TechBullet(models.Model):
+    bullet = models.CharField(max_length=255, unique=False)
+    tech = models.ForeignKey(Technology, on_delete=models.CASCADE)
+    slug = models.SlugField(max_length=255, unique=True)
+    
+    def __str__(self):
+        return self.bullet
+        
