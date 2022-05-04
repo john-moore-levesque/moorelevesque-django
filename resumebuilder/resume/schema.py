@@ -36,7 +36,7 @@ class Query(graphene.ObjectType):
     
     def resolve_all_duties(root, info):
         return (
-            models.Duty.objects.prefetch_related("job")
+            models.Duty.objects.all().prefetch_related("job")
         )
     
     def resolve_all_tech(root, info):
@@ -46,13 +46,14 @@ class Query(graphene.ObjectType):
     
     def resolve_all_tech_bullet(root, info):
         return (
-            models.TechBullet.objects.prefetch_related("tech")
+            models.TechBullet.objects.all().prefetch_related("tech")
         )
     
     def resolve_all_subduties(root, info):
         return (
-            models.SubDuty.objects.prefetch_related("duty")
+            models.SubDuty.objects.all().prefetch_related("duty")
         )
     
+    def resolve_jobs_by_subduty()
 
 schema = graphene.Schema(query=Query)

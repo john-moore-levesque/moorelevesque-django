@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}
+John Moore-Levesque
+{% endblock %}
+
+{% block page_content %}
+{% for job in jobs %}
+<h2>{{ job.company }} - {{ job.title }}</h2>
+<h3>{{ job.start }} - {{ job.end }}</h3>
+<ul>
+{% for duty in job.duties %}
+<li>{{ duty }}</li>
+<ul>
+{% for subduty in duty %}
+<li>{{ subduty }}</li>
+{% endfor %}
+</ul>
+{% endfor %}
+</ul>
+&nbsp;
+&nbsp;
+{% endfor %}
+{% endblock %}
