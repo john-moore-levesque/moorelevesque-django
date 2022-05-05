@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*import "@fontsource/noto-sans";*/
+
+@layer base {
+  @font-face {
+    font-family: "Noto Sans";
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: optional;
+  }
+  h1 {
+      @apply text-3xl;
+  }
+  h2 {
+      @apply text-2xl;
+  }
+  h3 {
+      @apply text-xl;
+  }
+  h4 {
+      @apply text-lg;
+  }
+}
+
+.section-header {
+    padding-top: 0.5em;
+    text-align: center;
+}
+
+.link,
+.technology,
+.job {
+    padding: 0.5em 1em 0em 1em;
+}
+
+.link-item,
+.tech-bullet,
+.duty-item {
+}
+
+.links,
+.tech-bullets,
+.duty {
+    padding-left: 1.5em;
+    margin-left: 0.5em;
+}
+
+.subduty {
+    margin-left: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.subduty-item {
+    @apply text-sm;
+}
+
+a {
+    color: blue;
+}
+
+.name {
+    font-family: "Noto Serif";
+    margin-bottom: 0.25em;
+}
+
+.resume-header {
+    text-align: center;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    border-bottom-width: 1;
+    padding-bottom: 0.5em;
+}
+
+.resume-section {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+.job-header {
+    float: left;
+}
+
+.job-dates {
+    text-align: right;
+    font-style: italic;
+}
+
+.resume {
+    padding: 2em;
+}
+
+.badge {
+    /*width: 20%;*/
+}
+
+.badges {
+    display: flex;
+}
+
+.badge-item {
+    list-style-type: none;
+    display: inline;
+}
+
+.badge-list {
+    list-style: none;
+}

@@ -4,36 +4,66 @@ John Moore-Levesque
 {% endblock %}
 
 {% block page_content %}
-<h1>John Moore-Levesque</h1>
-<p>
-    <a href="mailto:john@moorelevesque.com.com">john@moorelevesque.com</a>
-    303-718-9787
-    Jamestown, RI
-</p>
-{% for job in jobs %}
-<h3>{{ job.company }} - {{ job.title }}</h3>
-<h4>{{ job.start }} - {{ job.end }}</h4>
-
-{% for duty, subduties in job.duties.items %}
-{{ duty }}
-<br>
-<ul>
-    {% for subduty in subduties %}
-    <li>{{ subduty }}</li>
+<div class="resume">
+    <div class="resume-header">
+        <h1 class="name">John Moore-Levesque</h1>
+        <p>
+            <a href="mailto:john@moorelevesque.com.com">john@moorelevesque.com</a>
+            303-718-9787
+            Jamestown, RI
+        </p>
+    </div>
+    
+    <div class="badges">
+    {% for cert in certs %}
+    <div class="col-span-2"><a class="badge-link" href="{{ cert.link }}"><img class="badge" src="{{ cert.badge }}" alt="{{ cert.name }}"></a></div>
     {% endfor %}
-</ul>
-{% endfor %}
-
-&nbsp;
-&nbsp;
-{% endfor %}
-
-{% for tech in techs %}
-<h4>{{ tech.0 }}</h4>
-<ul>
-    {% for bullet in tech.1 %}
-    <li>{{ bullet }}</li>
+    </div>
+    
+    <div class="resume-section">
+    <h2 class="section-header">Employment History</h2>
+    {% for job in jobs %}
+    <div class="job">
+        <h3 class="job-header">{{ job.company }} - {{ job.title }}</h3>
+        <h4 class="job-dates">{{ job.start }} - {{ job.end }}</h4>
+        <ul class="duty">
+        {% for duty, subduties in job.duties.items %}
+        <li class="duty-item">{{ duty }}</li>
+        <ul class="subduty">
+            {% for subduty in subduties %}
+            <li class="subduty-item">{{ subduty }}</li>
+            {% endfor %}
+        </ul>
+        {% endfor %}
+        </ul>
+    </div>
     {% endfor %}
-</ul>
-{% endfor %}
+    </div>
+    
+    <div class="resume-section">
+    <h2 class="section-header">Technologies</h2>
+    {% for tech in techs %}
+    <div class="technology">
+
+    <h3 class="tech-header">{{ tech.0 }}</h3>
+    <ul class="tech-bullets">
+        {% for bullet in tech.1 %}
+        <li class="tech-bullet">{{ bullet }}</li>
+        {% endfor %}
+    </ul>
+    </div>
+    {% endfor %}
+    </div>
+    
+    <div class="resume-section">
+        <div class="link">
+        <h2 class="section-header">Links</h2>
+        <ul class="links">
+        {% for link, name in links %}
+        <li class="link-item"><a href="{{ link }}">{{ name }}</a></li>
+        {% endfor %}
+        </ul>
+        </div>
+    </div>
+</div>
 {% endblock %}

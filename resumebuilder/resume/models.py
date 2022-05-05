@@ -43,3 +43,19 @@ class TechBullet(models.Model):
     def __str__(self):
         return self.bullet
         
+class Link(models.Model):
+    link = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255, unique=True)
+    slug = models.SlugField(max_length=255, unique=True)
+    
+    def __str__(self):
+        return self.name
+
+class Certifications(models.Model):
+    cert = models.CharField(max_length=255, unique=True)
+    link = models.CharField(max_length=255, unique=True)
+    badge = models.ImageField(upload_to="images/", default="images/480px-No_image_available.svg.png")
+    slug = models.SlugField(max_length=255, unique=True)
+    
+    def __str__(self):
+        return self.cert

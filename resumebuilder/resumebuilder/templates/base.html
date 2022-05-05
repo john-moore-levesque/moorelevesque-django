@@ -3,6 +3,8 @@
     <title>
         {% block title %}{% endblock %}
     </title>
+    {% load static %}
+  <link rel="stylesheet" href="{% static "css/tailwind-output.css" %}">
 </head>
 <body>
     {% block page_content %}{% endblock %}

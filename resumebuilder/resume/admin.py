@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from resume.models import Job, Duty, SubDuty, Technology, TechBullet
+from resume.models import Job, Duty, SubDuty, Technology, TechBullet, Link, Certifications
 
 @admin.register(Job)
 class JobAdmin(admin.ModelAdmin):
@@ -88,5 +88,38 @@ class TechBulletAdmin(admin.ModelAdmin):
         "slug": (
             "tech",
             "bullet"
+        )
+    }
+
+@admin.register(Link)
+class LinkAdmin(admin.ModelAdmin):
+    model = Link
+    list_display = (
+        "slug",
+        "link",
+        "name"
+    )
+    
+    prepopulated_fields = {
+        "slug": (
+            "name",
+            "link"
+        )
+    }
+
+@admin.register(Certifications)
+class CertificationsAdmin(admin.ModelAdmin):
+    model = Certifications
+    list_display = (
+        "slug",
+        "cert",
+        "badge",
+        "link",
+    )
+    
+    prepopulated_fields = {
+        "slug": (
+            "cert",
+            "link"
         )
     }

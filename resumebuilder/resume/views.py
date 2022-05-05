@@ -1,11 +1,13 @@
 from django.shortcuts import render
-from resume.models import Job, Duty, SubDuty, Technology, TechBullet
+from resume.models import Job, Duty, SubDuty, Technology, TechBullet, Link, Certifications
 
 # Create your views here.
 def resume_home(request):
     context = {}
     jobs = []
     techs = []
+    links = []
+    certs = []
     for job in Job.objects.all():
         start = job.start.strftime("%B %Y")
         if job.current:
@@ -31,5 +33,16 @@ def resume_home(request):
             if bullet.tech == tech:
                 bullets.append(bullet.bullet)
         techs.append((tech, bullets))
-    context = {"jobs": jobs, "techs": techs}
+    
+
+    for link in Link.objects.all():
+        links.append((link.link, link.name))
+    
+    for cert in Certifications.objects.all():
+        name = cert.cert
+        url = cert.link
+        badge = cert.badge
+        certs.append({"name": name, "badge": badge, "link": url})
+    
+    context = {"jobs": jobs, "techs": techs, "links": links, "certs": certs}
     return render(request, 'index.html', context)
