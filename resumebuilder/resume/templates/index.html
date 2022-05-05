@@ -4,20 +4,36 @@ John Moore-Levesque
 {% endblock %}
 
 {% block page_content %}
+<h1>John Moore-Levesque</h1>
+<p>
+    <a href="mailto:john@moorelevesque.com.com">john@moorelevesque.com</a>
+    303-718-9787
+    Jamestown, RI
+</p>
 {% for job in jobs %}
-<h2>{{ job.company }} - {{ job.title }}</h2>
-<h3>{{ job.start }} - {{ job.end }}</h3>
+<h3>{{ job.company }} - {{ job.title }}</h3>
+<h4>{{ job.start }} - {{ job.end }}</h4>
+
+{% for duty, subduties in job.duties.items %}
+{{ duty }}
+<br>
 <ul>
-{% for duty in job.duties %}
-<li>{{ duty }}</li>
-<ul>
-{% for subduty in duty %}
-<li>{{ subduty }}</li>
-{% endfor %}
+    {% for subduty in subduties %}
+    <li>{{ subduty }}</li>
+    {% endfor %}
 </ul>
 {% endfor %}
+
+&nbsp;
+&nbsp;
+{% endfor %}
+
+{% for tech in techs %}
+<h4>{{ tech.0 }}</h4>
+<ul>
+    {% for bullet in tech.1 %}
+    <li>{{ bullet }}</li>
+    {% endfor %}
 </ul>
-&nbsp;
-&nbsp;
 {% endfor %}
 {% endblock %}
