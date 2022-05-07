@@ -39,6 +39,7 @@
 .link-item,
 .tech-bullet,
 .duty-item {
+    list-style-type: disc;
 }
 
 .links,
@@ -55,6 +56,7 @@
 
 .subduty-item {
     @apply text-sm;
+    list-style-type: circle;
 }
 
 a {

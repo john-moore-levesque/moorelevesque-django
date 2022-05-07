@@ -463,6 +463,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .link-item,
 .tech-bullet,
 .duty-item {
+    list-style-type: disc;
 }
 
 .links,
@@ -480,6 +481,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .subduty-item {
   font-size: 0.875rem;
   line-height: 1.25rem;
+    list-style-type: circle;
 }
 
 a {
