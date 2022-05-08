@@ -454,18 +454,23 @@ Ensure the default browser behavior of the `hidden` attribute.
     text-align: center;
 }
 
+.certifications,
+.education,
 .link,
 .technology,
 .job {
     padding: 0.5em 1em 0em 1em;
 }
 
+.certification,
 .link-item,
 .tech-bullet,
 .duty-item {
     list-style-type: disc;
 }
 
+.certification-list,
+.school,
 .links,
 .tech-bullets,
 .duty {
@@ -505,10 +510,13 @@ a {
     padding-left: 1em;
     padding-right: 1em;
 }
+
+.education-header,
 .job-header {
     float: left;
 }
 
+.education-dates,
 .job-dates {
     text-align: right;
     font-style: italic;
@@ -532,5 +540,6 @@ a {
 }
 
 .badge-list {
-    list-style: none;
+    list-style-type: none;
 }
+

@@ -57,12 +57,29 @@ John Moore-Levesque
     
     <div class="resume-section">
         <div class="link">
-        <h2 class="section-header">Links</h2>
+        <h2 class="section-header">Other Information</h2>
+        <h3 class="other-header">Links</h3>
         <ul class="links">
         {% for link, name in links %}
         <li class="link-item"><a href="{{ link }}">{{ name }}</a></li>
         {% endfor %}
         </ul>
+        </div>
+        <div class="education">
+            <h3 class="other-header">Education</h3>
+            <ul class="school">
+            <li class="school-item"><p class="education-header">University of Colorado at Boulder</p>
+            <p class="education-dates">Graduated May 2008</p>
+            </li>
+            </ul>
+        </div>
+        <div class="certifications">
+            <h3 class="other-header">Certifications</h3>
+            <ul class="certification-list">
+                {% for cert in certs %}
+                <li class="certification">{{ cert.name }}</li>
+                {% endfor %}
+            </ul>
         </div>
     </div>
 </div>

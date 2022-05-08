@@ -8,7 +8,7 @@ def resume_home(request):
     techs = []
     links = []
     certs = []
-    for job in Job.objects.all():
+    for job in Job.objects.all().order_by('end').reverse():
         start = job.start.strftime("%B %Y")
         if job.current:
             end = "present"
