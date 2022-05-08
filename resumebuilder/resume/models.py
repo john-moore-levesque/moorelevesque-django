@@ -16,6 +16,7 @@ class Duty(models.Model):
     duty = models.CharField(max_length=255, unique=False)
     job = models.ForeignKey(Job, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=255, unique=True)
+    weight = models.IntegerField(default=0, unique=False)
     
     def __str__(self):
         return self.duty
@@ -24,6 +25,7 @@ class SubDuty(models.Model):
     subduty = models.CharField(max_length=255, unique=False)
     duty = models.ForeignKey(Duty, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=255, unique=True)
+    weight = models.IntegerField(default=0, unique=False)
     
     def __str__(self):
         return self.subduty
@@ -31,6 +33,7 @@ class SubDuty(models.Model):
 class Technology(models.Model):
     tech = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True)
+    weight = models.IntegerField(default=0, unique=False)
     
     def __str__(self):
         return self.tech
@@ -39,7 +42,8 @@ class TechBullet(models.Model):
     bullet = models.CharField(max_length=255, unique=False)
     tech = models.ForeignKey(Technology, on_delete=models.CASCADE)
     slug = models.SlugField(max_length=255, unique=True)
-    
+    weight = models.IntegerField(default=0, unique=False)
+
     def __str__(self):
         return self.bullet
         
@@ -47,7 +51,8 @@ class Link(models.Model):
     link = models.CharField(max_length=255, unique=True)
     name = models.CharField(max_length=255, unique=True)
     slug = models.SlugField(max_length=255, unique=True)
-    
+    weight = models.IntegerField(default=0, unique=False)
+
     def __str__(self):
         return self.name
 
