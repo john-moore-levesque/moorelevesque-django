@@ -5,53 +5,62 @@
 /*import "@fontsource/noto-sans";*/
 
 @layer base {
-  @font-face {
-    font-family: "Noto Sans";
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: optional;
-    font-size: 1rem;
-  }
-  h1 {
-      @apply text-3xl;
-  }
-  h2 {
-      @apply text-2xl;
-  }
-  h3 {
-      @apply text-xl;
-  }
-  h4 {
-      @apply text-lg;
-  }
-  body {
-      @apply text-base;
-  }
+    @font-face {
+        font-family: "Noto Sans";
+        font-style: normal;
+        font-weight: 100 900;
+        font-display: optional;
+        font-size: 1rem;
+    }
+
+    h1 {
+        @apply text-2xl;
+    }
+
+    h2 {
+        @apply text-xl;
+    }
+
+    h3 {
+        @apply text-lg;
+    }
+
+    h4 {
+        @apply text-base;
+    }
+
+    body {
+        @apply text-body;
+    }
 }
 
 .section-header {
-    padding-top: 0.5rem;
-    text-align: center;
+    padding: 0.5rem;
+    font-family: "Roboto";
+    text-transform: uppercase;
+    @apply text-2xl;
+    @apply font-light;
+    background-color: skyblue;
 }
 
-
+.resume-sidebar,
 .resume-info {
     padding: 0.5rem 1rem 0rem 1rem;
+    @apply font-light;
 }
-
 
 .list-item {
     list-style-type: disc;
 }
 
-
+.sidebar-list,
 .resume-list {
     padding-left: 1.5rem;
     margin-left: 0.5rem;
 }
 
 .resume-sublist {
-    margin-left: 0.5rem;
+    margin-left: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
@@ -94,59 +103,63 @@ a {
 
 .education-dates,
 .job-dates {
+    @apply text-base;
     text-align: right;
     font-style: italic;
+    padding-bottom: 0.25rem;
 }
 
 .resume {
     padding: 2rem;
 }
 
-/*.badge {*/
-    /*width: 20%;*/
-/*}*/
-
-/*.badges {*/
-/*    display: flex;*/
-/*}*/
-
-/*.badge-item {*/
-/*    list-style-type: none;*/
-/*    display: inline;*/
-/*}*/
-
-/*.badge-list {*/
-/*    list-style-type: none;*/
-/*}*/
-
 .grid {
-  display: grid;
+    display: grid;
 }
 
 
 .grid-cols-3 {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .grid-cols-6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .grid-cols-8 {
-    	grid-template-columns: repeat(8, minmax(0, 1fr));
+    grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .gap-4 {
-  gap: 1rem;
+    gap: 1rem;
 }
 
 .col-span-2 {
     grid-column: span 2 / span 2;
 }
+
 .col-span-3 {
     grid-column: span 3 / span 3;
 }
 
 .col-span-6 {
-    	grid-column: span 6 / span 6;
+    grid-column: span 6 / span 6;
+}
+
+.sidebar-section {
+    padding-bottom: 1rem;
+    @apply text-sm;
+}
+
+.sidebar-header {
+    @apply text-base;
+}
+
+
+.first {
+    padding-top: 0;
+}
+
+.last {
+    padding-bottom: 1rem;
 }
