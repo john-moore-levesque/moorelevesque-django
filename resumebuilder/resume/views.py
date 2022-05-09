@@ -17,11 +17,11 @@ def resume_home(request):
         title = job.title
         company = job.company
         duties = {}
-        for duty in Duty.objects.all().order_by('weight'):
+        for duty in Duty.objects.all().order_by('weight').reverse():
             if duty.job == job:
                 if duty not in duties.keys():
                     duties[duty] = []
-                for subduty in SubDuty.objects.all().order_by('weight'):
+                for subduty in SubDuty.objects.all().order_by('weight').reverse():
                     if subduty.duty == duty:
                         duties[duty].append(subduty)
         
@@ -29,7 +29,7 @@ def resume_home(request):
     
     for tech in Technology.objects.all().order_by('weight'):
         bullets = []
-        for bullet in TechBullet.objects.all().order_by('weight'):
+        for bullet in TechBullet.objects.all().order_by('weight').reverse():
             if bullet.tech == tech:
                 bullets.append(bullet.bullet)
         techs.append((tech, bullets))

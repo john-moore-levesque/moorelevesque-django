@@ -4,80 +4,83 @@ John Moore-Levesque
 {% endblock %}
 
 {% block page_content %}
+
 <div class="resume">
     <div class="resume-header">
         <h1 class="name">John Moore-Levesque</h1>
-        <p>
-            <a href="mailto:john@moorelevesque.com.com">john@moorelevesque.com</a>
-            303-718-9787
-            Jamestown, RI
-        </p>
-    </div>
-    
-    <!--<div class="badges">-->
-    <!--{% for cert in certs %}-->
-    <!--<div class="col-span-2"><a class="badge-link" href="{{ cert.link }}"><img class="badge" src="{{ cert.badge }}" alt="{{ cert.name }}"></a></div>-->
-    <!--{% endfor %}-->
-    <!--</div>-->
-    
-    <div class="resume-section">
-    <h2 class="section-header">Employment History</h2>
-    {% for job in jobs %}
-    <div class="job">
-        <h3 class="job-header">{{ job.company }} - {{ job.title }}</h3>
-        <h4 class="job-dates">{{ job.start }} - {{ job.end }}</h4>
-        <ul class="duty">
-        {% for duty, subduties in job.duties.items %}
-        <li class="duty-item">{{ duty }}</li>
-        <ul class="subduty">
-            {% for subduty in subduties %}
-            <li class="subduty-item">{{ subduty }}</li>
-            {% endfor %}
-        </ul>
-        {% endfor %}
-        </ul>
-    </div>
-    {% endfor %}
-    </div>
-    
-    <div class="resume-section">
-    <h2 class="section-header">Technologies</h2>
-    {% for tech in techs %}
-    <div class="technology">
-
-    <h3 class="tech-header">{{ tech.0 }}</h3>
-    <ul class="tech-bullets">
-        {% for bullet in tech.1 %}
-        <li class="tech-bullet">{{ bullet }}</li>
-        {% endfor %}
-    </ul>
-    </div>
-    {% endfor %}
-    </div>
-    
-    <div class="resume-section">
-        <div class="link">
-        <h2 class="section-header">Other Information</h2>
-        <h3 class="other-header">Links</h3>
-        <ul class="links">
-        {% for link, name in links %}
-        <li class="link-item"><a href="{{ link }}">{{ name }}</a></li>
-        {% endfor %}
-        </ul>
+        <div class="grid grid-cols-3 gap-4">
+            <div>
+                <a class="email" href="mailto:john@moorelevesque.com.com">john@moorelevesque.com</a>
+            </div>
+            <div>
+                <p class="phone">303-718-9787</p>
+            </div>
+            <div>
+                <p class="locale">Jamestown, RI</p>
+            </div>
         </div>
-        <div class="education">
-            <h3 class="other-header">Education</h3>
-            <ul class="school">
-            <li class="school-item"><p class="education-header">University of Colorado at Boulder</p>
-            <p class="education-dates">Graduated May 2008</p>
-            </li>
+
+    </div>
+
+    <div class="resume-section">
+        <h2 class="section-header">Employment History</h2>
+        {% for job in jobs %}
+        <div class="resume-info" name="job">
+            <h3 class="job-header">{{ job.company }} - {{ job.title }}</h3>
+            <h4 class="job-dates">{{ job.start }} - {{ job.end }}</h4>
+            <ul class="resume-list" name="duty-list">
+                {% for duty, subduties in job.duties.items %}
+                <li class="list-item" name="duty-item">{{ duty }}</li>
+                <ul class="resume-sublist" name="subduty-list">
+                    {% for subduty in subduties %}
+                    <li class="sublist-item" name="subduty-item">{{ subduty }}</li>
+                    {% endfor %}
+                </ul>
+                {% endfor %}
             </ul>
         </div>
-        <div class="certifications">
+        {% endfor %}
+    </div>
+
+    <div class="resume-section">
+        <h2 class="section-header">Technologies</h2>
+        {% for tech in techs %}
+        <div class="resume-info" name="technology">
+            <h3 class="tech-header">{{ tech.0 }}</h3>
+            <ul class="resume-list" name="tech-bullets-list">
+                {% for bullet in tech.1 %}
+                <li class="list-item" name="tech-bullet-item">{{ bullet }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="resume-section">
+        <h2 class="section-header">Other Information</h2>
+        <div class="resume-info" name="personal-links">
+            <h3 class="other-header">Links</h3>
+            <ul class="resume-list" name="links-list">
+                {% for link, name in links %}
+                <li class="list-item" name="link-item"><a href="{{ link }}">{{ name }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="resume-info" name="education">
+            <h3 class="other-header">Education</h3>
+            <ul class="resume-list" name="school-list">
+                <li class="plain-list-item">
+                    <p>University of Colorado at Boulder</p>
+                    <p>Bachelor of Arts, Anthropology</p>
+                    <p><em>Graduated May 2008</em></p>
+                </li>
+            </ul>
+        </div>
+        <div class="resume-info" name="certifications">
             <h3 class="other-header">Certifications</h3>
-            <ul class="certification-list">
+            <ul class="resume-list" name="certification-list">
                 {% for cert in certs %}
-                <li class="certification">{{ cert.name }}</li>
+                <li class="list-item" name="certification-item">{{ cert.name }}</li>
                 {% endfor %}
             </ul>
         </div>

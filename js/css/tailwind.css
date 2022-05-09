@@ -10,6 +10,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: optional;
+    font-size: 1rrem;
   }
   h1 {
       @apply text-3xl;
@@ -23,43 +24,38 @@
   h4 {
       @apply text-lg;
   }
+  body {
+      @apply text-base;
+  }
 }
 
 .section-header {
-    padding-top: 0.5em;
+    padding-top: 0.5rem;
     text-align: center;
 }
 
-.certifications,
-.education,
-.link,
-.technology,
-.job {
-    padding: 0.5em 1em 0em 1em;
+
+.resume-info {
+    padding: 0.5rem 1rem 0rem 1rem;
 }
 
-.certification,
-.link-item,
-.tech-bullet,
-.duty-item {
+
+.list-item {
     list-style-type: disc;
 }
 
-.certification-list,
-.school,
-.links,
-.tech-bullets,
-.duty {
-    padding-left: 1.5em;
-    margin-left: 0.5em;
+
+.resume-list {
+    padding-left: 1.5rem;
+    margin-left: 0.5rem;
 }
 
-.subduty {
-    margin-left: 0.5em;
-    margin-bottom: 0.5em;
+.resume-sublist {
+    margin-left: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 
-.subduty-item {
+.sublist-item {
     @apply text-sm;
     list-style-type: circle;
 }
@@ -70,7 +66,7 @@ a {
 
 .name {
     font-family: "Noto Serif";
-    margin-bottom: 0.25em;
+    margin-bottom: 0.75rem;
 }
 
 .resume-header {
@@ -78,12 +74,12 @@ a {
     border-bottom-style: solid;
     border-bottom-color: black;
     border-bottom-width: 1;
-    padding-bottom: 0.5em;
+    padding-bottom: 1.5rem;
 }
 
 .resume-section {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .education-header,
@@ -98,23 +94,34 @@ a {
 }
 
 .resume {
-    padding: 2em;
+    padding: 2rem;
 }
 
-.badge {
+/*.badge {*/
     /*width: 20%;*/
+/*}*/
+
+/*.badges {*/
+/*    display: flex;*/
+/*}*/
+
+/*.badge-item {*/
+/*    list-style-type: none;*/
+/*    display: inline;*/
+/*}*/
+
+/*.badge-list {*/
+/*    list-style-type: none;*/
+/*}*/
+
+.grid {
+  display: grid;
 }
 
-.badges {
-    display: flex;
+.grid-cols-3 {
+  grid-tremplate-columns: repeat(3, minmax(0, 1fr));
 }
 
-.badge-item {
-    list-style-type: none;
-    display: inline;
+.gap-4 {
+  gap: 1rrem;
 }
-
-.badge-list {
-    list-style-type: none;
-}
-
