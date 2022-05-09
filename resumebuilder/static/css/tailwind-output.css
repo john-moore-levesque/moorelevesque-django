@@ -492,12 +492,24 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 1.5rem;
     line-height: 2rem;
     font-weight: 300;
-    background-color: skyblue;
+    background-color: #297373;
+    color: white;
 }
 
-.resume-sidebar,
+.resume-sidebar {
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    font-weight: 300;
+    background-color: #39393A;
+    color: white;
+}
 .resume-info {
-    padding: 0.5rem 1rem 0rem 1rem;
+    /*padding: 0.5rem 1rem 0rem 1rem;*/
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
     font-weight: 300;
 }
 
@@ -522,9 +534,9 @@ Ensure the default browser behavior of the `hidden` attribute.
     list-style-type: circle;
 }
 
-a {
-    color: blue;
-}
+/*a {*/
+/*    color: blue;*/
+/*}*/
 
 .name {
     font-family: "Noto Serif";
@@ -538,15 +550,14 @@ a {
 
 .resume-header {
     text-align: center;
-    border-bottom-style: solid;
-    border-bottom-color: black;
-    border-bottom-width: 1;
+    /*border-bottom-style: solid;*/
+    /*border-bottom-color: black;*/
+    /*border-bottom-width: 1;*/
     padding-bottom: 1.5rem;
 }
 
 .resume-section {
-    padding-left: 1rem;
-    padding-right: 1rem;
+
 }
 
 .education-header,
@@ -606,8 +617,9 @@ a {
 }
 
 .sidebar-header {
-  font-size: 1rem;
-  line-height: 1.5rem;
+    padding-left: 0.5rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
 }
 
 
@@ -617,4 +629,8 @@ a {
 
 .last {
     padding-bottom: 1rem;
+}
+
+.resume-content {
+    /*border-left: 1px solid black;*/
 }

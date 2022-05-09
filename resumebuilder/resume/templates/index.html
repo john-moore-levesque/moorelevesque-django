@@ -28,7 +28,7 @@ John Moore-Levesque - Middleware Administrator
                 <h3 class="sidebar-header">Links</h3>
                 <ul class="sidebar-list" name="links-list">
                     {% for link, name in links %}
-                    <li class="sidebar-list-item" name="link-item"><a href="{{ link }}">{{ name }}</a></li>
+                    <li class="sidebar-list-item" name="link-item"><a href="{{ link }}">{{ link | slice:"8:" }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -54,7 +54,7 @@ John Moore-Levesque - Middleware Administrator
         <!--End Sidebar-->
 
         <!--Start Resume Content-->
-        <div name="resume-content" class="col-span-6">
+        <div name="resume-content" class="resume-content col-span-6">
             <!--Start Employment History-->
             <div class="resume-section">
                 <h2 class="section-header">Experience</h2>
