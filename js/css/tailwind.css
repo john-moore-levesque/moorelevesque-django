@@ -10,7 +10,7 @@
     font-style: normal;
     font-weight: 100 900;
     font-display: optional;
-    font-size: 1rrem;
+    font-size: 1rem;
   }
   h1 {
       @apply text-3xl;
@@ -66,6 +66,11 @@ a {
 
 .name {
     font-family: "Noto Serif";
+    margin-bottom: 0.25rem;
+}
+
+.headline {
+    font-family: "Noto Serif";
     margin-bottom: 0.75rem;
 }
 
@@ -118,10 +123,30 @@ a {
   display: grid;
 }
 
+
 .grid-cols-3 {
-  grid-tremplate-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.grid-cols-8 {
+    	grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 
 .gap-4 {
-  gap: 1rrem;
+  gap: 1rem;
+}
+
+.col-span-2 {
+    grid-column: span 2 / span 2;
+}
+.col-span-3 {
+    grid-column: span 3 / span 3;
+}
+
+.col-span-6 {
+    	grid-column: span 6 / span 6;
 }
