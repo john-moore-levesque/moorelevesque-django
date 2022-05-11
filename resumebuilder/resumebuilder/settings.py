@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-u$-nlq7j#28dn4!@awpsaumr!an$q)%d5ozw$9f(t0j=axf&79
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['72b3bb9fa5a34bb3b64d538492d79150.vfs.cloud9.us-east-1.amazonaws.com']
+ALLOWED_HOSTS = ['.vfs.cloud9.us-east-1.amazonaws.com']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'resume',
-    'graphene_django',
     'corsheaders',
 ]
 
@@ -129,9 +128,6 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static") ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GRAPHENE = {
-    "SCHEMA": "resume.schema.schema",
-}
 
 CORS_ORIGIN_ALLOW_ALL = False
 # CORS_ORIGIN_WHITELIST = ("http://localhost:8080","http://e9e1fe09ead743cf81c6af39db062d35.vfs.cloud9.us-east-1.amazonaws.com")
