@@ -9,6 +9,7 @@ gunicorn==20.1.0
 html5lib==1.1
 Pillow==9.1.0
 promise==2.3
+psycopg2-binary==2.9.1
 pycparser==2.21
 pydyf==0.1.2
 pyphen==0.12.0
