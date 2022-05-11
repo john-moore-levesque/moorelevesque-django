@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "postcss css/tailwind.css -o ../resumebuilder/static/css/tailwind-output.css"
+    "build": "postcss css/tailwind.css -o ../static/css/tailwind-output.css"
   },
   "dependencies": {
     "@fontsource/noto-sans": "^4.5.9",
