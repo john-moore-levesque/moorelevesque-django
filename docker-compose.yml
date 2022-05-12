@@ -26,8 +26,8 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - static_volume:/usr/src/app/staticfiles
-      - certbot:/var/www/certbot/www:/var/www/certbot
-      - certificates:./certbot/conf:/etc/nginx/ssl/
+      - /var/www/certbot/www:/var/www/certbot:ro
+      - /var/www/certbot/conf:/etc/nginx/ssl:ro
     ports:
       - 80:80
       - 443:443
@@ -36,11 +36,9 @@ services:
   certbot:
     image: certbot/certbot:latest
     volumes:
-      - certbot:/var/www/certbot/www:/var/www/certbot
-      - certificates:/var/www/certbot/conf/:/etc/letsencrypt/
+      - /var/www/certbot/www:/var/www/certbot:rw
+      - /var/www/certbot/conf/:/etc/letsencrypt:rw
 
 volumes:
   postgres_data:
   static_volume:
-  certbot:
-  certificates:
