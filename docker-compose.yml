@@ -26,13 +26,14 @@ services:
       dockerfile: ./Dockerfile
     volumes:
       - static_volume:/usr/src/app/staticfiles
+      - /etc/letsencrypt:/etc/letsencrypt
     ports:
       - 80:80
       - 443:443
+    restart: always
     depends_on:
       - web
-    env_file:
-      - env/.env.nginx
+
 
 
 volumes:
