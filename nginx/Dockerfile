@@ -1,7 +1,7 @@
 FROM nginx:1.21-alpine
 
 RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d/
 
 RUN mkdir /etc/nginx/templates
-COPY nginx.template /etc/nginx/templates
+COPY nginx.conf.template /etc/nginx/templates
+RUN envsubst < /etc/nginx/templates/nginx.conf.template > /etc/nginx/conf.d/nginx.conf
