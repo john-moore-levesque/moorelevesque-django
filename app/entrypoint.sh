@@ -1,16 +1,12 @@
 #!/bin/sh
 
-if [ "$DATABASE" = "postgres" ]
+if [ -f "db.sqlite3" ]
 then
-    echo "Waiting for postgres..."
-
-    while ! nc -z $SQL_HOST $SQL_PORT; do
-        sleep 0.1
-    done
-
-    echo "PostgreSQL started"
+    rm db.sqlite3
 fi
 
+touch db.sqlite3
+python manage.py loaddata db.json
 python manage.py migrate --no-input
 python manage.py collectstatic --no-input
 
