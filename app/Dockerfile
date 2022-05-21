@@ -18,6 +18,9 @@ RUN pip install --upgrade pip
 COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
+# Create secret key
+RUN export SECRET=`python -c "import secrets; print(secrets.token_urlsafe())"
+
 # Copy entrypoint
 COPY ./entrypoint.sh .
 RUN sed -i 's/\r$//g' /usr/src/app/entrypoint.sh
