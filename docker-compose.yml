@@ -8,6 +8,7 @@ services:
     command: gunicorn resumebuilder.wsgi:application --bind 0.0.0.0:8000
     volumes:
       - static_volume:/usr/src/app/staticfiles
+      - /tmp/docker-files:/tmp/docker-files
     expose:
       - 8000
     env_file:
