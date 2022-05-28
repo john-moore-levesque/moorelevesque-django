@@ -19,7 +19,7 @@ COPY ./requirements.txt .
 RUN pip install -r requirements.txt
 
 # Create secret key
-RUN export SECRET=`python -c "import secrets; print(secrets.token_urlsafe())"
+RUN export SECRET=`python -c "import secrets; print(secrets.token_urlsafe())"`
 
 # Copy entrypoint
 COPY ./entrypoint.sh .
